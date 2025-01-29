@@ -57,7 +57,7 @@ export async function POST(request: Request, { params }: { params: any }) {
   const timeoutId = setTimeout(() => controller.abort(), CONFIG.TIMEOUT_MS);
 
   try {
-    const chatId = (await params).chatId;
+    const chatId = params.chatId;
     const { prompt } = await request.json();
     const user = await currentUser();
 
