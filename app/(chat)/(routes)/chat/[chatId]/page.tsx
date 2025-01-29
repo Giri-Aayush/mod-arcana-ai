@@ -4,9 +4,7 @@ import prismadb from "@/lib/prismadb";
 import ChatClient from "./components/client";
 
 interface ChatIdPageProps {
-  params: {
-    chatId: string
-  }
+  params: any;
 }
 
 export default async function ChatIdPage({ params }: ChatIdPageProps) {
