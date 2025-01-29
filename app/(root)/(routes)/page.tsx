@@ -1,11 +1,10 @@
-// app/(root)/(routes)/page.tsx
 import React from "react";
 import SearchInput from "@/components/search-input";
 import Categories from "@/components/categories";
 import prismadb from "@/lib/prismadb";
 import Companions from "@/components/companions";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = 'force-dynamic'; // Add this line at the top
 
 interface PageProps {
   searchParams: any;
@@ -15,14 +14,12 @@ export default async function RootPage({
   searchParams,
 }: PageProps) {
   try {
-    // Await the searchParams before accessing its properties
-    const params = searchParams;
-    
+    // Remove the await from searchParams
     const data = await prismadb.companion.findMany({
       where: {
-        categoryId: params.categoryId || undefined,
-        name: params.name ? {
-          contains: params.name
+        categoryId: searchParams.categoryId || undefined,
+        name: searchParams.name ? {
+          contains: searchParams.name
         } : undefined
       },
       orderBy: {
