@@ -5,6 +5,8 @@ import Categories from "@/components/categories";
 import prismadb from "@/lib/prismadb";
 import Companions from "@/components/companions";
 
+export const dynamic = 'force-dynamic';
+
 interface PageProps {
   searchParams: any;
 }
