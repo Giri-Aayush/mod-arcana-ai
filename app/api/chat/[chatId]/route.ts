@@ -52,7 +52,7 @@ Response as ${name}, focusing ONLY on the asked topic:
 <|assistant|>`;
 };
 
-export async function POST(request: Request, { params }: { params: { chatId: string } }) {
+export async function POST(request: Request, { params }: { params: any }) {
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), CONFIG.TIMEOUT_MS);
 
