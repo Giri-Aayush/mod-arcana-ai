@@ -1,3 +1,4 @@
+//app/layout.tsx
 import "./globals.css";
 import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import { Inter } from "next/font/google";

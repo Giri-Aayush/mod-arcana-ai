@@ -1,4 +1,4 @@
-// File: app/(root)/(routes)/page.tsx
+// app/(root)/(routes)/page.tsx
 import React from "react";
 import SearchInput from "@/components/search-input";
 import Categories from "@/components/categories";
@@ -14,7 +14,7 @@ export default async function RootPage({
 }: PageProps) {
   try {
     // Await the searchParams before accessing its properties
-    const params = await searchParams;
+    const params = searchParams;
     
     const data = await prismadb.companion.findMany({
       where: {

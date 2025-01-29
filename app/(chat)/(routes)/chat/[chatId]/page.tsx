@@ -1,3 +1,4 @@
+// app/(chat)/(routes)/chat/[chatId]/page.tsx
 import { auth } from '@clerk/nextjs/server';
 import { redirect } from "next/navigation";
 import prismadb from "@/lib/prismadb";
@@ -9,7 +10,7 @@ interface ChatIdPageProps {
 
 export default async function ChatIdPage({ params }: ChatIdPageProps) {
   const { userId } = await auth();
-  const { chatId } = await params;  // Properly await params
+  const { chatId } = params;  // Properly await params
 
   if (!userId) {
     redirect(`/sign-in?redirectUrl=/chat/${chatId}`);
